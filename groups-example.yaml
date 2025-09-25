@@ -1,0 +1,123 @@
+---
+# Engineering Department - Top level group
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: engineering
+  description: Engineering Department
+spec:
+  type: department
+  profile:
+    displayName: Engineering Department
+    email: engineering@company.com
+  children: [platform-team, frontend-team, backend-team, devops-team]
+---
+# Platform Team
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: platform-team
+  description: Platform Engineering Team
+spec:
+  type: team
+  profile:
+    displayName: Platform Team
+    email: platform@company.com
+  parent: engineering
+  children: []
+---
+# Frontend Team
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: frontend-team
+  description: Frontend Development Team
+spec:
+  type: team
+  profile:
+    displayName: Frontend Team
+    email: frontend@company.com
+  parent: engineering
+  children: []
+---
+# Backend Team
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: backend-team
+  description: Backend Development Team
+spec:
+  type: team
+  profile:
+    displayName: Backend Team
+    email: backend@company.com
+  parent: engineering
+  children: []
+---
+# DevOps Team
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: devops-team
+  description: DevOps and Infrastructure Team
+spec:
+  type: team
+  profile:
+    displayName: DevOps Team
+    email: devops@company.com
+  parent: engineering
+  children: []
+---
+# Product Department
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: product
+  description: Product Department
+spec:
+  type: department
+  profile:
+    displayName: Product Department
+    email: product@company.com
+  children: [product-management, ux-design]
+---
+# Product Management Team
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: product-management
+  description: Product Management Team
+spec:
+  type: team
+  profile:
+    displayName: Product Management
+    email: pm@company.com
+  parent: product
+  children: []
+---
+# UX Design Team
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: ux-design
+  description: User Experience Design Team
+spec:
+  type: team
+  profile:
+    displayName: UX Design Team
+    email: ux@company.com
+  parent: product
+  children: []
+---
+# Security Team
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: security-team
+  description: Security and Compliance Team
+spec:
+  type: team
+  profile:
+    displayName: Security Team
+    email: security@company.com
+  children: []

@@ -1,0 +1,241 @@
+---
+# Complete Organizational Structure Example for Backstage
+# This file demonstrates a hierarchical organization with departments, teams, and users
+
+# Root Organization
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: company
+  description: Main Company Organization
+spec:
+  type: organization
+  profile:
+    displayName: Company Name
+    email: info@company.com
+  children: [engineering, product, operations]
+---
+# Engineering Department
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: engineering
+  description: Engineering Department
+spec:
+  type: department
+  profile:
+    displayName: Engineering
+    email: engineering@company.com
+  parent: company
+  children: [platform-engineering, application-development, quality-assurance]
+---
+# Platform Engineering Team
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: platform-engineering
+  description: Platform Engineering and Infrastructure
+spec:
+  type: team
+  profile:
+    displayName: Platform Engineering
+    email: platform@company.com
+  parent: engineering
+  children: []
+---
+# Application Development Team
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: application-development
+  description: Application Development Team
+spec:
+  type: team
+  profile:
+    displayName: Application Development
+    email: appdev@company.com
+  parent: engineering
+  children: []
+---
+# Quality Assurance Team
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: quality-assurance
+  description: Quality Assurance and Testing
+spec:
+  type: team
+  profile:
+    displayName: Quality Assurance
+    email: qa@company.com
+  parent: engineering
+  children: []
+---
+# Product Department
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: product
+  description: Product Department
+spec:
+  type: department
+  profile:
+    displayName: Product
+    email: product@company.com
+  parent: company
+  children: [product-strategy, user-experience]
+---
+# Product Strategy Team
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: product-strategy
+  description: Product Strategy and Management
+spec:
+  type: team
+  profile:
+    displayName: Product Strategy
+    email: strategy@company.com
+  parent: product
+  children: []
+---
+# User Experience Team
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: user-experience
+  description: User Experience and Design
+spec:
+  type: team
+  profile:
+    displayName: User Experience
+    email: ux@company.com
+  parent: product
+  children: []
+---
+# Operations Department
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: operations
+  description: Operations Department
+spec:
+  type: department
+  profile:
+    displayName: Operations
+    email: ops@company.com
+  parent: company
+  children: [security, compliance]
+---
+# Security Team
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: security
+  description: Security and DevSecOps
+spec:
+  type: team
+  profile:
+    displayName: Security
+    email: security@company.com
+  parent: operations
+  children: []
+---
+# Compliance Team
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: compliance
+  description: Compliance and Governance
+spec:
+  type: team
+  profile:
+    displayName: Compliance
+    email: compliance@company.com
+  parent: operations
+  children: []
+---
+# Example Users with Different Roles and Memberships
+# Executive Level
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: cto
+  description: Chief Technology Officer
+spec:
+  profile:
+    displayName: Chief Technology Officer
+    email: cto@company.com
+  memberOf: [company, engineering]
+---
+# Department Heads
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: engineering.director
+  description: Director of Engineering
+spec:
+  profile:
+    displayName: Director of Engineering
+    email: engineering.director@company.com
+  memberOf: [engineering, platform-engineering, application-development]
+---
+# Team Leads
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: platform.lead
+  description: Platform Engineering Team Lead
+spec:
+  profile:
+    displayName: Platform Engineering Lead
+    email: platform.lead@company.com
+  memberOf: [platform-engineering]
+---
+# Individual Contributors
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: senior.engineer
+  description: Senior Platform Engineer
+spec:
+  profile:
+    displayName: Senior Platform Engineer
+    email: senior.engineer@company.com
+  memberOf: [platform-engineering]
+---
+# Cross-functional Users
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: devops.engineer
+  description: DevOps Engineer with Security Focus
+spec:
+  profile:
+    displayName: DevOps Engineer
+    email: devops.engineer@company.com
+  memberOf: [platform-engineering, security]
+---
+# Special Groups for Cross-cutting Concerns
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: architects
+  description: Technical Architecture Council
+spec:
+  type: team
+  profile:
+    displayName: Architecture Council
+    email: architects@company.com
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: principal.architect
+  description: Principal Architect
+spec:
+  profile:
+    displayName: Principal Architect
+    email: principal.architect@company.com
+  memberOf: [architects, platform-engineering, engineering]

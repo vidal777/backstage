@@ -1,0 +1,163 @@
+---
+# Platform Engineering Users
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: john.smith
+  description: Senior Platform Engineer
+spec:
+  profile:
+    displayName: John Smith
+    email: john.smith@company.com
+    picture: https://avatars.githubusercontent.com/u/12345?v=4
+  memberOf: [platform-team]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: sarah.johnson
+  description: Platform Engineering Lead
+spec:
+  profile:
+    displayName: Sarah Johnson
+    email: sarah.johnson@company.com
+    picture: https://avatars.githubusercontent.com/u/67890?v=4
+  memberOf: [platform-team, engineering]
+---
+# Frontend Team Users
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: alex.chen
+  description: Senior Frontend Developer
+spec:
+  profile:
+    displayName: Alex Chen
+    email: alex.chen@company.com
+    picture: https://avatars.githubusercontent.com/u/11111?v=4
+  memberOf: [frontend-team]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: maria.garcia
+  description: Frontend Team Lead
+spec:
+  profile:
+    displayName: Maria Garcia
+    email: maria.garcia@company.com
+    picture: https://avatars.githubusercontent.com/u/22222?v=4
+  memberOf: [frontend-team, engineering]
+---
+# Backend Team Users
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: david.wilson
+  description: Senior Backend Developer
+spec:
+  profile:
+    displayName: David Wilson
+    email: david.wilson@company.com
+    picture: https://avatars.githubusercontent.com/u/33333?v=4
+  memberOf: [backend-team]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: lisa.brown
+  description: Backend Engineering Manager
+spec:
+  profile:
+    displayName: Lisa Brown
+    email: lisa.brown@company.com
+    picture: https://avatars.githubusercontent.com/u/44444?v=4
+  memberOf: [backend-team, engineering]
+---
+# DevOps Team Users
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: mike.davis
+  description: DevOps Engineer
+spec:
+  profile:
+    displayName: Mike Davis
+    email: mike.davis@company.com
+    picture: https://avatars.githubusercontent.com/u/55555?v=4
+  memberOf: [devops-team]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: jennifer.taylor
+  description: Site Reliability Engineer
+spec:
+  profile:
+    displayName: Jennifer Taylor
+    email: jennifer.taylor@company.com
+    picture: https://avatars.githubusercontent.com/u/66666?v=4
+  memberOf: [devops-team, platform-team]
+---
+# Product Team Users
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: robert.anderson
+  description: Senior Product Manager
+spec:
+  profile:
+    displayName: Robert Anderson
+    email: robert.anderson@company.com
+    picture: https://avatars.githubusercontent.com/u/77777?v=4
+  memberOf: [product-management]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: emma.thompson
+  description: UX Designer
+spec:
+  profile:
+    displayName: Emma Thompson
+    email: emma.thompson@company.com
+    picture: https://avatars.githubusercontent.com/u/88888?v=4
+  memberOf: [ux-design]
+---
+# Security Team Users
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: carlos.martinez
+  description: Security Engineer
+spec:
+  profile:
+    displayName: Carlos Martinez
+    email: carlos.martinez@company.com
+    picture: https://avatars.githubusercontent.com/u/99999?v=4
+  memberOf: [security-team]
+---
+# Cross-functional Users
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: anna.lee
+  description: Engineering Director
+spec:
+  profile:
+    displayName: Anna Lee
+    email: anna.lee@company.com
+    picture: https://avatars.githubusercontent.com/u/10101?v=4
+  memberOf: [engineering, platform-team, backend-team, frontend-team, devops-team]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: raulvidalpalomo
+  description: Platform Architect and DevSecOps Lead
+spec:
+  profile:
+    displayName: Raul Vidal Palomo
+    email: raulvidalpalomo@company.com
+    picture: https://avatars.githubusercontent.com/u/raulvidalpalomo?v=4
+  memberOf: [platform-team, devops-team, security-team, engineering]
