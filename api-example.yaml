@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: example-api
+  description: An example API for demonstration purposes
+  tags:
+    - example
+    - demo
+  title: Example API
+spec:
+  type: openapi
+  lifecycle: experimental
+  owner: team-foo
+  definition:
+    $text: |
+      openapi: 3.0.0
+      info:
+        title: Example API
+        version: 1.0.0
+      paths:
+        /items:
+          get:
+            summary: List items
+            responses:
+              '200':
+                description: A list of items
+                content:
+                  application/json:
+                    schema:
+                      type: array
+                      items:
+                        type: string
